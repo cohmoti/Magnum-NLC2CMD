@@ -1,0 +1,26 @@
+{
+    "1": {
+        "invocation": "Scan all the files located at the path/ti/files/ file-system directory using the watch1 watch defined in Xray.",
+        "cmd": "s \"path/to/files/\" --watches \"watch1\""
+    },
+    "2": {
+        "invocation": "Scan all the files located at the path/ti/files/ file-system directory using the watch1 and watch2 watches defined in Xray.",
+        "cmd": "s \"path/to/files/\" --watches \"watch1,watch2\""
+    },
+    "3": {
+        "invocation": "Scan all the zip files located at the path/ti/files/ file-system directory using the watch1 and watch2 watches defined in Xray. ",
+        "cmd": "s \"path/to/files/*.zip\" --watches \"watch1,watch2\"\n"
+    },
+    "4": {
+        "invocation": "Scan all the tgz files located at the path/ti/files/ file-system directory using the policies defined for project-1.",
+        "cmd": "s \"path/to/files/*.tgz\" --project \"project-1\""
+    },
+    "5": {
+        "invocation": "Scans all the tgz files located in the current directory using the policies defined for the libs-local/release-artifacts/ path in Artifactory.",
+        "cmd": "s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+    "6": {
+        "invocation": "Scans all the tgz files located at the current directory. Show all known vulnerabilities, regardless of the policies defined in Xray.",
+        "cmd": "s \"*.tgz\""
+    }
+}

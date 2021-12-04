@@ -1,15 +1,16 @@
 import json
 import random
 import os
+
+import submission_code.nlp_tools
 from bashlint.data_tools import bash_tokenizer
-from submission_code.nlp_tools import tokenizer
 
 
 def tokenize_eng(text):
-    return tokenizer.ner_tokenizer(text)[0]
+    return submission_code.nlp_tools.tokenizer.ner_tokenizer(text)[0]
 
 def tokenize_bash(text):
-    return bash_tokenizer(text,  loose_constraints=True, arg_type_only=True)
+    return bash_tokenizer(text,  loose_constraints=True, arg_type_only=True, verbose=True)
 
 
 def preprocess(data_dir, data_file):
