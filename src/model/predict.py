@@ -8,7 +8,7 @@ import os
 
 
 def tokenize_eng(text):
-    return tokenizer.ner_tokenizer(text)[0]
+    return tokenizer.ner_tokenizer(text)
 
 
 def predict(invocations, model_dir, model_file, result_cnt=5):
@@ -54,8 +54,12 @@ def predict(invocations, model_dir, model_file, result_cnt=5):
     ################################################################################################
     #     Participants should add their codes to fill predict `commands` and `confidences` here    #
     ################################################################################################
+    placeholders = []
+    new_invocations = []
     for idx, inv in enumerate(invocations):
-        new_inv = tokenize_eng(inv)
+        new_inv, placeholder_dict = tokenize_eng(inv)
+        new_invocations.append(new_inv)
+        placeholders.append(placeholder_dict)
         new_inv = ' '.join(new_inv)
         translated = translator.translate([new_inv], batch_size=1)
         for i in range(result_cnt):
@@ -65,4 +69,4 @@ def predict(invocations, model_dir, model_file, result_cnt=5):
     ################################################################################################
     #                               Participant code block ends                                    #
     ################################################################################################
-    return commands, confidences
+    return commands, confidences, new_invocations, placeholders

@@ -8,11 +8,6 @@ import argparse
 import time
 import json
 from datetime import datetime
-import tempfile
-import traceback
-import experiment_impact_tracker
-from experiment_impact_tracker import compute_tracker
-from experiment_impact_tracker.compute_tracker import ImpactTracker
 from utils.dataset import Nlc2CmdDS
 from utils.dataloaders import Nlc2CmdDL
 from utils.metric_utils import compute_metric
@@ -170,51 +165,13 @@ def evaluate_model(annotation_filepath, params_filepath, model_dir, model_file):
 
 
 def single(sentence, model_dir, model_file):
-    results = predictor.predict([sentence],
+    commands, confidences, new_invocations, placeholders = predictor.predict([sentence],
                                 model_dir,
                                 model_file,
                                 result_cnt=1)
-    print(f"Result={results[0][0][0]}")
-
-
-def compute_energyusage(annotation_filepath, model_dir, model_file):
-    try:
-        tmplogdir = tempfile.mkdtemp()
-        print(f'Logging energy evaluation in directory: {tmplogdir}')
-
-        tracker = ImpactTracker(tmplogdir)
-        nlc2cmd_dl = get_dataloader(annotation_filepath)
-
-        tracker.launch_impact_monitor()
-        grnd_truth, _, _ = get_predictions(nlc2cmd_dl, model_dir, model_file)
-        n = len(grnd_truth)
-
-        info = tracker.get_latest_info_and_check_for_errors()
-
-        tracker.p.terminate()
-        experiment_impact_tracker.data_utils.log_final_info(tracker.logdir)
-
-        stats = compute_tracker.read_latest_stats(tmplogdir)
-        energy_watts = stats.get('rapl_estimated_attributable_power_draw', 0.0)
-        energy_mwatts = (energy_watts * 1000.0) / n
-
-        result = {
-            'status': 'success',
-            'energy_mwh': energy_mwatts
-        }
-
-    except Exception as err:
-        result = {
-            'status': 'error',
-            'error_message': str(err),
-            'energy_mwh': 0.0
-        }
-
-        print(f'Exception occurred in energy consumption computation')
-        print(traceback.format_exc())
-
-    finally:
-        return result
+    print(f"Result={commands[0][0]}")
+    print(f"NewInvocation={','.join(new_invocations[0])}")
+    print(f"Placeholders={','.join([','.join([str(v[0]),v[1][0],v[1][1]]) for v in placeholders[0][0].items()])}")
 
 
 if __name__ == '__main__':
@@ -224,8 +181,6 @@ if __name__ == '__main__':
 
     if args.mode == 'eval':
         result = evaluate_model(args.annotation_filepath, args.params_filepath, args.model_dir, args.model_file)
-    elif args.mode == 'energy':
-        result = compute_energyusage(args.annotation_filepath, args.model_dir, args.model_file)
     elif args.mode == 'train':
         pass
     elif args.mode == 'preprocess':
