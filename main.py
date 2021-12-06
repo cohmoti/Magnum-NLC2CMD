@@ -174,7 +174,7 @@ def single(sentence, model_dir, model_file):
                                 model_dir,
                                 model_file,
                                 result_cnt=1)
-    print(results[0][0][0])
+    print(f"Result={results[0][0][0]}")
 
 
 def compute_energyusage(annotation_filepath, model_dir, model_file):
