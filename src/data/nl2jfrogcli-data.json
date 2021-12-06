@@ -1,202 +1,202 @@
 {
     "1": {
         "invocation": "Scan all the files located at the \"path/to/files/\" file-system directory using the \"watch1\" watch defined in Xray.",
-        "cmd": "jfrog s \"path/to/files/\" --watches \"watch1\""
+        "cmd": "s \"path/to/files/\" --watches \"watch1\""
     },
     "2": {
         "invocation": "Scan \"path/to/files/\" directory using the \"watch1\" and \"watch2\" watches.",
-        "cmd": "jfrog s \"path/to/files/\" --watches \"watch1,watch2\""
+        "cmd": "s \"path/to/files/\" --watches \"watch1,watch2\""
     },
     "3": {
         "invocation": "Scan all the zip files under \"path/to/files/\" using the \"w45\" and \"w67\" watches.",
-        "cmd": "jfrog s \"path/to/files/*.zip\" --watches \"w45,w67\""
+        "cmd": "s \"path/to/files/*.zip\" --watches \"w45,w67\""
     },
 	"4": {
         "invocation": "Scan tgz files located at \"/path/to/files/\" directory using the policies defined for project \"project-1\".",
-        "cmd": "jfrog s \"path/to/files/*.tgz\" --project \"project-1\""
+        "cmd": "s \"path/to/files/*.tgz\" --project \"project-1\""
     },
 	"5": {
         "invocation": "Scan all the tgz files located in the current directory using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "jfrog s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
     },
 	"6": {
         "invocation": "Scans all the tgz files located at the current directory. Show all known vulnerabilities, regardless of the policies defined in Xray.",
-        "cmd": "jfrog s \"*.tgz\""
+        "cmd": "s \"*.tgz\""
     },
     "7": {
         "invocation": "Scan all files under \"path/to/files/\". Show the list of licenses.",
-        "cmd": "jfrog s \"path/to/files/\" --licenses"
+        "cmd": "s \"path/to/files/\" --licenses"
     },
 	"8": {
         "invocation": "Scan all files under \"/dir/to/scan/\" and produce a JSON file report.",
-        "cmd": "jfrog s \"/dir/to/scan/\" --format=json"
+        "cmd": "s \"/dir/to/scan/\" --format=json"
     },
 	"9": {
         "invocation": "Scan \"/dir/to/scan/\" dir using \"4321\" Server ID.",
-        "cmd": "jfrog s \"/dir/to/scan/\" --server-id \"4321\""
+        "cmd": "s \"/dir/to/scan/\" --server-id \"4321\""
     },
 	"10": {
         "invocation": "Scan using \"/$HOME/file/spec.txt\" spec file. Provide licenses information.",
-        "cmd": "jfrog s --spec \"/$HOME/file/spec.txt\" --licenses"
-    }
+        "cmd": "s --spec \"/$HOME/file/spec.txt\" --licenses"
+    },
 	"11": {
         "invocation": "Audit the npm project at the current directory using the \"watch1\" watch.",
-        "cmd": "jfrog an --watches \"watch1\""
-    }
+        "cmd": "an --watches \"watch1\""
+    },
 	"12": {
         "invocation": "Audit the npm project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "jfrog an --watches \"wt1,wt2\""
-    }
+        "cmd": "an --watches \"wt1,wt2\""
+    },
 	"13": {
         "invocation": "Audit the npm project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "jfrog an --project \"project-1\""
+        "cmd": "an --project \"project-1\""
     },
 	"14": {
         "invocation": "Audit the npm project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "jfrog an --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "an --repo-path \"libs-local/release-artifacts/\""
     },
 	"15": {
         "invocation": "Audit the npm project.",
-        "cmd": "jfrog an"
+        "cmd": "an"
     },
 	"16": {
         "invocation": "Audit the npm project and show the list of licenses.",
-        "cmd": "jfrog an --licenses"
+        "cmd": "an --licenses"
     },
 	"17": {
         "invocation": "Audit npm using \"4321\" Server ID.",
-        "cmd": "jfrog an --server-id \"4321\""
+        "cmd": "an --server-id \"4321\""
     },
 	"18": {
         "invocation": "Audit the npm project and produce a JSON file.",
-        "cmd": "jfrog an --format=json"
+        "cmd": "an --format=json"
     },
 	"19": {
         "invocation": "Audit the npm project and produce a JSON file with licenses.",
-        "cmd": "jfrog an --licenses --format=json"
+        "cmd": "an --licenses --format=json"
     },
 	"20": {
         "invocation": "Audit npm using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "jfrog an --watches \"wt1\" --server-id \"765\""
-    }
+        "cmd": "an --watches \"wt1\" --server-id \"765\""
+    },
 	"21": {
         "invocation": "Audit the maven project at the current directory using the \"watch1\" watch.",
-        "cmd": "jfrog am --watches \"watch1\""
-    }
+        "cmd": "am --watches \"watch1\""
+    },
 	"22": {
         "invocation": "Audit the Maven project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "jfrog am --watches \"wt1,wt2\""
-    }
+        "cmd": "am --watches \"wt1,wt2\""
+    },
 	"23": {
         "invocation": "Audit the maven project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "jfrog am --project \"project-1\""
+        "cmd": "am --project \"project-1\""
     },
 	"24": {
         "invocation": "Audit the Maven project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "jfrog am --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "am --repo-path \"libs-local/release-artifacts/\""
     },
 	"25": {
         "invocation": "Audit the maven project.",
-        "cmd": "jfrog am"
+        "cmd": "am"
     },
 	"26": {
         "invocation": "Audit the Maven project and show the list of licenses.",
-        "cmd": "jfrog am --licenses"
+        "cmd": "am --licenses"
     },
 	"27": {
         "invocation": "Audit maven using \"4321\" Server ID.",
-        "cmd": "jfrog am --server-id \"4321\""
+        "cmd": "am --server-id \"4321\""
     },
 	"28": {
         "invocation": "Audit the Maven project and produce a JSON file.",
-        "cmd": "jfrog am --format=json"
+        "cmd": "am --format=json"
     },
 	"29": {
         "invocation": "Audit the maven project and produce a JSON file with licenses.",
-        "cmd": "jfrog am --licenses --format=json"
+        "cmd": "am --licenses --format=json"
     },
 	"30": {
         "invocation": "Audit Maven using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "jfrog am --watches \"wt1\" --server-id \"765\""
-    }
+        "cmd": "am --watches \"wt1\" --server-id \"765\""
+    },
 	"31": {
         "invocation": "Audit the pip project at the current directory using the \"watch1\" watch.",
-        "cmd": "jfrog ap --watches \"watch1\""
-    }
+        "cmd": "ap --watches \"watch1\""
+    },
 	"32": {
         "invocation": "Audit the Pip project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "jfrog ap --watches \"wt1,wt2\""
-    }
+        "cmd": "ap --watches \"wt1,wt2\""
+    },
 	"33": {
         "invocation": "Audit the pip project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "jfrog ap --project \"project-1\""
+        "cmd": "ap --project \"project-1\""
     },
 	"34": {
         "invocation": "Audit the pip project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "jfrog ap --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "ap --repo-path \"libs-local/release-artifacts/\""
     },
 	"35": {
         "invocation": "Audit the Pip project.",
-        "cmd": "jfrog ap"
+        "cmd": "ap"
     },
 	"36": {
         "invocation": "Audit the pip project and show the list of licenses.",
-        "cmd": "jfrog ap --licenses"
+        "cmd": "ap --licenses"
     },
 	"37": {
         "invocation": "Audit Pip using \"4321\" Server ID.",
-        "cmd": "jfrog ap --server-id \"4321\""
+        "cmd": "ap --server-id \"4321\""
     },
 	"38": {
         "invocation": "Audit the pip project and produce a JSON file.",
-        "cmd": "jfrog ap --format=json"
+        "cmd": "ap --format=json"
     },
 	"39": {
         "invocation": "Audit the Pip project and produce a JSON file with licenses.",
-        "cmd": "jfrog ap --licenses --format=json"
+        "cmd": "ap --licenses --format=json"
     },
 	"40": {
         "invocation": "Audit pip using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "jfrog ap --watches \"wt1\" --server-id \"765\""
-    }
+        "cmd": "ap --watches \"wt1\" --server-id \"765\""
+    },
 	"41": {
         "invocation": "Audit the go project at the current directory using the \"watch1\" watch.",
-        "cmd": "jfrog ago --watches \"watch1\""
-    }
+        "cmd": "ago --watches \"watch1\""
+    },
 	"42": {
         "invocation": "Audit the golang project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "jfrog ago --watches \"wt1,wt2\""
-    }
+        "cmd": "ago --watches \"wt1,wt2\""
+    },
 	"43": {
         "invocation": "Audit the go project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "jfrog ago --project \"project-1\""
+        "cmd": "ago --project \"project-1\""
     },
 	"44": {
         "invocation": "Audit the golang project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "jfrog ago --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "ago --repo-path \"libs-local/release-artifacts/\""
     },
 	"45": {
         "invocation": "Audit the Go project.",
-        "cmd": "jfrog ago"
+        "cmd": "ago"
     },
 	"46": {
         "invocation": "Audit the Go project and show the list of licenses.",
-        "cmd": "jfrog ago --licenses"
+        "cmd": "ago --licenses"
     },
 	"47": {
         "invocation": "Audit Golang using \"4321\" Server ID.",
-        "cmd": "jfrog ago --server-id \"4321\""
+        "cmd": "ago --server-id \"4321\""
     },
 	"48": {
         "invocation": "Audit the Golang project and produce a JSON file.",
-        "cmd": "jfrog ago --format=json"
+        "cmd": "ago --format=json"
     },
 	"49": {
         "invocation": "Audit the Golang project and produce a JSON file with licenses.",
-        "cmd": "jfrog ago --licenses --format=json"
+        "cmd": "ago --licenses --format=json"
     },
 	"50": {
         "invocation": "Audit Go using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "jfrog ago --watches \"wt1\" --server-id \"765\""
+        "cmd": "ago --watches \"wt1\" --server-id \"765\""
     }
 }

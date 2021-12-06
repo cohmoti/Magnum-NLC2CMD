@@ -19,6 +19,7 @@ from utils.metric_utils import compute_metric
 from src.model import data_process
 import src.model.predict as predictor
 
+
 def get_parser():
     parser = argparse.ArgumentParser()
 
@@ -29,7 +30,8 @@ def get_parser():
     parser.add_argument('--data_dir', type=str, default='src/data')
     parser.add_argument('--data_file', type=str, default='nl2bash-data.json')
     parser.add_argument('--model_dir', type=str, default='src/model/run')
-    parser.add_argument('--model_file',nargs='*', default=['model_step_2500.pt'], type=str)
+    parser.add_argument('--model_file', nargs='*', default=['model_step_2500.pt'], type=str)
+    parser.add_argument('--sentence', type=str)
     return parser
 
 
@@ -63,7 +65,7 @@ def validate_predictions(predicted_cmds, predicted_confds, n_batch, result_cnt):
             f'Confidence value beyond the allowed range of [0.0, 1.0] found in predictions'
 
 
-def get_predictions(nlc2cmd_dl,model_dir, model_file ):
+def get_predictions(nlc2cmd_dl, model_dir, model_file):
     result_cnt = 5
     i = 0
     ground_truths = []
@@ -167,6 +169,14 @@ def evaluate_model(annotation_filepath, params_filepath, model_dir, model_file):
     return result
 
 
+def single(sentence, model_dir, model_file):
+    results = predictor.predict([sentence],
+                                model_dir,
+                                model_file,
+                                result_cnt=1)
+    print(results[0][0][0])
+
+
 def compute_energyusage(annotation_filepath, model_dir, model_file):
     try:
         tmplogdir = tempfile.mkdtemp()
@@ -215,12 +225,13 @@ if __name__ == '__main__':
     if args.mode == 'eval':
         result = evaluate_model(args.annotation_filepath, args.params_filepath, args.model_dir, args.model_file)
     elif args.mode == 'energy':
-        result = compute_energyusage(args.annotation_filepath,  args.model_dir, args.model_file)
+        result = compute_energyusage(args.annotation_filepath, args.model_dir, args.model_file)
     elif args.mode == 'train':
         pass
     elif args.mode == 'preprocess':
         data_process.preprocess(args.data_dir, args.data_file)
-
+    elif args.mode == 'single':
+        single(args.sentence, args.model_dir, args.model_file)
     if args.mode in ['eval', 'energy']:
         os.makedirs(args.output_folderpath, exist_ok=True)
         with open(os.path.join(args.output_folderpath, 'result.json'), 'w') as f:
