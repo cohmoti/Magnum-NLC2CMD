@@ -22,5 +22,21 @@
     "6": {
         "invocation": "Scans all the tgz files located at the current directory. Show all known vulnerabilities, regardless of the policies defined in Xray.",
         "cmd": "s \"*.tgz\""
+    },
+    "7": {
+        "invocation": "Scan all files under \"path/to/files/\". Show the list of licenses.",
+        "cmd": "jfrog s \"path/to/files/\" --licenses"
+    },
+	"8": {
+        "invocation": "Scan all files under \"/dir/to/scan/\" and produce a JSON file report.",
+        "cmd": "jfrog s \"/dir/to/scan/\" --format=json"
+    },
+	"9": {
+        "invocation": "Scan \"/dir/to/scan/\" dir using \"4321\" Server ID.",
+        "cmd": "jfrog s \"/dir/to/scan/\" --server-id \"4321\""
+    },
+	"10": {
+        "invocation": "Scan using \"/$HOME/file/spec.txt\" spec file. Provide licenses information.",
+        "cmd": "jfrog s --spec \"/$HOME/file/spec.txt\" --licenses"
     }
 }
