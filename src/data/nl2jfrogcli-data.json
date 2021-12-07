@@ -602,15 +602,15 @@
     },
     "151": {
         "invocation": "Scan all files in repository repo/path using watch watch1",
-        "cmd": "xr_s --repo-path repo/path --watch watch1"
+        "cmd": "xr_s --repo-path repo/path --watches watch1"
     },
     "152": {
         "invocation": "Scan all files using watch watch1 in repository repo/path",
-        "cmd": "xr_s --watch watch1 --repo-path repo/path"
+        "cmd": "xr_s --watches watch1 --repo-path repo/path"
     },
     "153": {
         "invocation": "Scan all files using watch watch1 in project repo/proj and display licenses",
-        "cmd": "xr_s --watch watch1 --repo-path repo/proj --licenses"
+        "cmd": "xr_s --watches watch1 --repo-path repo/proj --licenses"
     },
     "154": {
         "invocation": "Scan any .tgz file in this directory for vulnerabilities and display licenses.",
@@ -622,30 +622,22 @@
     },
     "156": {
         "invocation": "Audit node project \"project-1\" using watch \"watch1\"",
-        "cmd": "xr_an --project project-1 --watch watch1"
+        "cmd": "xr_an --project project-1 --watches watch1"
     },
     "157": {
         "invocation": "Audit maven project \"project-1\" using watch \"watch1\"",
-        "cmd": "xr_am --project project-1 --watch watch1"
+        "cmd": "xr_am --project project-1 --watches watch1"
     },
     "158": {
         "invocation": "Audit gradle project \"project-1\" using watch \"watch1\"",
-        "cmd": "xr_ag --project project-1 --watch watch1"
+        "cmd": "xr_ag --project project-1 --watches watch1"
     },
     "159": {
         "invocation": "Audit pip project \"project-1\" using watch \"watch1\"",
-        "cmd": "xr_ap --project project-1 --watch watch1"
+        "cmd": "xr_ap --project project-1 --watches watch1"
     },
     "160": {
         "invocation": "Audit go project \"project-1\" using watch \"watch1\"",
-        "cmd": "xr_ago --project project-1 --watch watch1"
-    },
-    "161": {
-        "invocation": "Audit gradle project \"project-1\" using watch \"watch1\" and using the gradle wrapper",
-        "cmd": "xr_ago --project project-1 --watch watch1 --use-wrapper"
-    },
-    "162": {
-        "invocation": "Audit gradle project \"project-1\" using watch \"watch1\" and using the gradle wrapper",
-        "cmd": "xr_ago --project project-1 --watch watch1 --use-wrapper true"
+        "cmd": "xr_ago --project project-1 --watches watch1"
     }
 }
