@@ -32,8 +32,8 @@
         "cmd": "xr_s \"/dir/to/scan/\" --format=json"
     },
 	"9": {
-        "invocation": "Scan \"/dir/to/scan/\" dir using \"4321\" Server ID.",
-        "cmd": "xr_s \"/dir/to/scan/\" --server-id \"4321\""
+        "invocation": "Scan \"/dir/to/scan/\" dir using \"my_server\" Server ID.",
+        "cmd": "xr_s \"/dir/to/scan/\" --server-id \"my_server\""
     },
 	"10": {
         "invocation": "Scan using \"/$HOME/file/spec.txt\" spec file. Provide licenses information.",
@@ -64,8 +64,8 @@
         "cmd": "xr_an --licenses"
     },
 	"17": {
-        "invocation": "Audit npm using \"4321\" Server ID.",
-        "cmd": "xr_an --server-id \"4321\""
+        "invocation": "Audit npm using \"my_server\" Server ID.",
+        "cmd": "xr_an --server-id \"my_server\""
     },
 	"18": {
         "invocation": "Audit the npm project and produce a JSON file.",
@@ -76,8 +76,8 @@
         "cmd": "xr_an --licenses --format=json"
     },
 	"20": {
-        "invocation": "Audit npm using the \"wt1\" watch and Server ID \"765\".",
-        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit npm using the \"wt1\" watch and Server ID \"my_server\".",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"my_server\""
     },
 	"21": {
         "invocation": "Audit the maven project at the current directory using the \"watch1\" watch.",
@@ -104,8 +104,8 @@
         "cmd": "xr_am --licenses"
     },
 	"27": {
-        "invocation": "Audit maven using \"4321\" Server ID.",
-        "cmd": "xr_am --server-id \"4321\""
+        "invocation": "Audit maven using \"my_server\" Server ID.",
+        "cmd": "xr_am --server-id \"my_server\""
     },
 	"28": {
         "invocation": "Audit the Maven project and produce a JSON file.",
@@ -116,8 +116,8 @@
         "cmd": "xr_am --licenses --format=json"
     },
 	"30": {
-        "invocation": "Audit Maven using the \"wt1\" watch and Server ID \"765\".",
-        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit Maven using the \"wt1\" watch and Server ID \"my_server\".",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"my_server\""
     },
 	"31": {
         "invocation": "Audit the pip project at the current directory using the \"watch1\" watch.",
@@ -144,8 +144,8 @@
         "cmd": "xr_ap --licenses"
     },
 	"37": {
-        "invocation": "Audit Pip using \"4321\" Server ID.",
-        "cmd": "xr_ap --server-id \"4321\""
+        "invocation": "Audit Pip using \"my_server\" Server ID.",
+        "cmd": "xr_ap --server-id \"my_server\""
     },
 	"38": {
         "invocation": "Audit the pip project and produce a JSON file.",
@@ -156,8 +156,8 @@
         "cmd": "xr_ap --licenses --format=json"
     },
 	"40": {
-        "invocation": "Audit pip using the \"wt1\" watch and Server ID \"765\".",
-        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit pip using the \"wt1\" watch and Server ID \"my_server\".",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"my_server\""
     },
 	"41": {
         "invocation": "Audit the go project at the current directory using the \"watch1\" watch.",
@@ -184,8 +184,8 @@
         "cmd": "xr_ago --licenses"
     },
 	"47": {
-        "invocation": "Audit Golang using \"4321\" Server ID.",
-        "cmd": "xr_ago --server-id \"4321\""
+        "invocation": "Audit Golang using \"my_server\" Server ID.",
+        "cmd": "xr_ago --server-id \"my_server\""
     },
 	"48": {
         "invocation": "Audit the Golang project and produce a JSON file.",
@@ -196,8 +196,8 @@
         "cmd": "xr_ago --licenses --format=json"
     },
 	"50": {
-        "invocation": "Audit Go using the \"wt1\" watch and Server ID \"765\".",
-        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit Go using the \"wt1\" watch and Server ID \"my_server\".",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"my_server\""
     },
 
 	"51": {
@@ -489,68 +489,68 @@
         "cmd": "xr_ago --watches \"wt1,wt2\""
     },
 	"123": {
-        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit NPM.",
-        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"my_server\" to audit NPM.",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"my_server\""
     },
 	"124": {
-        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit Maven.",
-        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"my_server\" to audit Maven.",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"my_server\""
     },
 	"125": {
-        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit Pip.",
-        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"my_server\" to audit Pip.",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"my_server\""
     },
 	"126": {
-        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit Go.",
-        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"my_server\" to audit Go.",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"my_server\""
     },
 	"127": {
-        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit NPM project.",
-        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+        "invocation": "Using \"wt1\" watch and the Server ID \"my_server\", audit NPM project.",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"my_server\""
     },
 	"128": {
-        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit maven project.",
-        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+        "invocation": "Using \"wt1\" watch and the Server ID \"my_server\", audit maven project.",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"my_server\""
     },
 	"129": {
-        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit pip project.",
-        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+        "invocation": "Using \"wt1\" watch and the Server ID \"my_server\", audit pip project.",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"my_server\""
     },
 	"130": {
-        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit Go project.",
-        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+        "invocation": "Using \"wt1\" watch and the Server ID \"my_server\", audit Go project.",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"my_server\""
     },
 	"131": {
-        "invocation": "Review npm with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+        "invocation": "Review npm with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"my_server\""
     },
 	"132": {
-        "invocation": "Review maven with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+        "invocation": "Review maven with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"my_server\""
     },
 	"133": {
-        "invocation": "Review pip with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+        "invocation": "Review pip with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"my_server\""
     },
 	"134": {
-        "invocation": "Review golang with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+        "invocation": "Review golang with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"my_server\""
     },
 	"135": {
-        "invocation": "Analyze npm with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+        "invocation": "Analyze npm with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"my_server\""
     },
 	"136": {
-        "invocation": "Analyze maven with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+        "invocation": "Analyze maven with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"my_server\""
     },
 	"137": {
-        "invocation": "Analyze pip with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+        "invocation": "Analyze pip with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"my_server\""
     },
 	"138": {
-        "invocation": "Analyze golang with \"wt1\" watch and the Server ID \"765\".",
-        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+        "invocation": "Analyze golang with \"wt1\" watch and the Server ID \"my_server\".",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"my_server\""
     },
 	"139": {
         "invocation": "Use Xray to audit this npm project according to the policies defined for the \"libs-local/release-artifacts/\" path.",
@@ -599,5 +599,53 @@
 	"150": {
         "invocation": "Go over all the .tgz files and scan them for vulnerabilities.",
         "cmd": "xr_s \"*.tgz\""
+    },
+    "151": {
+        "invocation": "Scan all files in repository repo/path using watch watch1",
+        "cmd": "xr_s --repo-path repo/path --watch watch1"
+    },
+    "152": {
+        "invocation": "Scan all files using watch watch1 in repository repo/path",
+        "cmd": "xr_s --watch watch1 --repo-path repo/path"
+    },
+    "153": {
+        "invocation": "Scan all files using watch watch1 in project repo/proj and display licenses",
+        "cmd": "xr_s --watch watch1 --repo-path repo/proj --licenses"
+    },
+    "154": {
+        "invocation": "Scan any .tgz file in this directory for vulnerabilities and display licenses.",
+        "cmd": "xr_s \"*.tgz\" --licenses"
+    },
+    "155": {
+        "invocation": "how to scan project my_proj and display its licenses?",
+        "cmd": "xr_s --project my_proj --licenses"
+    },
+    "156": {
+        "invocation": "Audit node project \"project-1\" using watch \"watch1\"",
+        "cmd": "xr_an --project project-1 --watch watch1"
+    },
+    "157": {
+        "invocation": "Audit maven project \"project-1\" using watch \"watch1\"",
+        "cmd": "xr_am --project project-1 --watch watch1"
+    },
+    "158": {
+        "invocation": "Audit gradle project \"project-1\" using watch \"watch1\"",
+        "cmd": "xr_ag --project project-1 --watch watch1"
+    },
+    "159": {
+        "invocation": "Audit pip project \"project-1\" using watch \"watch1\"",
+        "cmd": "xr_ap --project project-1 --watch watch1"
+    },
+    "160": {
+        "invocation": "Audit go project \"project-1\" using watch \"watch1\"",
+        "cmd": "xr_ago --project project-1 --watch watch1"
+    },
+    "161": {
+        "invocation": "Audit gradle project \"project-1\" using watch \"watch1\" and using the gradle wrapper",
+        "cmd": "xr_ago --project project-1 --watch watch1 --use-wrapper"
+    },
+    "162": {
+        "invocation": "Audit gradle project \"project-1\" using watch \"watch1\" and using the gradle wrapper",
+        "cmd": "xr_ago --project project-1 --watch watch1 --use-wrapper true"
     }
 }
