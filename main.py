@@ -4,6 +4,7 @@ import os
 sys.path.append('{}/src/model/utils/nlc2cmd/utils/metric'.format(os.path.abspath(os.getcwd())))
 sys.path.append('{}/src/model/utils/nlc2cmd/tellina-baseline/src'.format(os.path.abspath(os.getcwd())))
 
+from submission_code.encoder_decoder.slot_filling import slot_filler_type_match
 import argparse
 import time
 import json
@@ -13,6 +14,8 @@ from utils.dataloaders import Nlc2CmdDL
 from utils.metric_utils import compute_metric
 from src.model import data_process
 import src.model.predict as predictor
+from submission_code.bashlint.bash import argument_types
+from bashlint.data_tools import bash_tokenizer
 
 
 def get_parser():
@@ -169,13 +172,27 @@ def single(sentence, model_dir, model_file):
                                 model_dir,
                                 model_file,
                                 result_cnt=1)
-    print(f"Result={commands[0][0]}")
+
+    parts = commands[0][0].split(' ')
+    new_cmd = []
+    used_fillers = set()
+    for p in parts:
+        p_tran = p
+        if p in argument_types:
+            for k, v in placeholders[0][0].items():
+                if k not in used_fillers and slot_filler_type_match(p, v[1]):
+                    used_fillers.add(k)
+                    p_tran = v[0]
+                    break
+        new_cmd.append(p_tran)
+
+    print(f"Result={' '.join(new_cmd)}")
+    print(f"Result_pre_process={commands[0][0]}")
     print(f"NewInvocation={','.join(new_invocations[0])}")
     print(f"Placeholders={','.join([','.join([str(v[0]),v[1][0],v[1][1]]) for v in placeholders[0][0].items()])}")
 
 
 if __name__ == '__main__':
-
     parser = get_parser()
     args = parser.parse_args()
 
