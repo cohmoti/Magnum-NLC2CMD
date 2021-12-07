@@ -1,202 +1,603 @@
 {
     "1": {
         "invocation": "Scan all the files located at the \"path/to/files/\" file-system directory using the \"watch1\" watch defined in Xray.",
-        "cmd": "s \"path/to/files/\" --watches \"watch1\""
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
     },
     "2": {
         "invocation": "Scan \"path/to/files/\" directory using the \"watch1\" and \"watch2\" watches.",
-        "cmd": "s \"path/to/files/\" --watches \"watch1,watch2\""
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1,watch2\""
     },
     "3": {
-        "invocation": "Scan all the zip files under \"path/to/files/\" using the \"w45\" and \"w67\" watches.",
-        "cmd": "s \"path/to/files/*.zip\" --watches \"w45,w67\""
+        "invocation": "Scan all the .zip files under \"path/to/files/\" using the \"w45\" and \"w67\" watches.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
     },
 	"4": {
-        "invocation": "Scan tgz files located at \"/path/to/files/\" directory using the policies defined for project \"project-1\".",
-        "cmd": "s \"path/to/files/*.tgz\" --project \"project-1\""
+        "invocation": "Scan .tgz files located at \"/path/to/files/\" directory using the policies defined for project \"project-1\".",
+        "cmd": "xr_s \"path/to/files/*.tgz\" --project \"project-1\""
     },
 	"5": {
-        "invocation": "Scan all the tgz files located in the current directory using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+        "invocation": "Scan all the .tgz files located in the current directory using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
     },
 	"6": {
-        "invocation": "Scans all the tgz files located at the current directory. Show all known vulnerabilities, regardless of the policies defined in Xray.",
-        "cmd": "s \"*.tgz\""
+        "invocation": "Scans all the .tgz files located at the current directory. Show all known vulnerabilities, regardless of the policies defined in Xray.",
+        "cmd": "xr_s \"*.tgz\""
     },
     "7": {
         "invocation": "Scan all files under \"path/to/files/\". Show the list of licenses.",
-        "cmd": "s \"path/to/files/\" --licenses"
+        "cmd": "xr_s \"path/to/files/\" --licenses"
     },
 	"8": {
         "invocation": "Scan all files under \"/dir/to/scan/\" and produce a JSON file report.",
-        "cmd": "s \"/dir/to/scan/\" --format=json"
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
     },
 	"9": {
         "invocation": "Scan \"/dir/to/scan/\" dir using \"4321\" Server ID.",
-        "cmd": "s \"/dir/to/scan/\" --server-id \"4321\""
+        "cmd": "xr_s \"/dir/to/scan/\" --server-id \"4321\""
     },
 	"10": {
         "invocation": "Scan using \"/$HOME/file/spec.txt\" spec file. Provide licenses information.",
-        "cmd": "s --spec \"/$HOME/file/spec.txt\" --licenses"
+        "cmd": "xr_s --spec \"/$HOME/file/spec.txt\" --licenses"
     },
 	"11": {
         "invocation": "Audit the npm project at the current directory using the \"watch1\" watch.",
-        "cmd": "an --watches \"watch1\""
+        "cmd": "xr_an --watches \"watch1\""
     },
 	"12": {
         "invocation": "Audit the npm project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "an --watches \"wt1,wt2\""
+        "cmd": "xr_an --watches \"wt1,wt2\""
     },
 	"13": {
         "invocation": "Audit the npm project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "an --project \"project-1\""
+        "cmd": "xr_an --project \"project-1\""
     },
 	"14": {
         "invocation": "Audit the npm project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "an --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "xr_an --repo-path \"libs-local/release-artifacts/\""
     },
 	"15": {
         "invocation": "Audit the npm project.",
-        "cmd": "an"
+        "cmd": "xr_an"
     },
 	"16": {
         "invocation": "Audit the npm project and show the list of licenses.",
-        "cmd": "an --licenses"
+        "cmd": "xr_an --licenses"
     },
 	"17": {
         "invocation": "Audit npm using \"4321\" Server ID.",
-        "cmd": "an --server-id \"4321\""
+        "cmd": "xr_an --server-id \"4321\""
     },
 	"18": {
         "invocation": "Audit the npm project and produce a JSON file.",
-        "cmd": "an --format=json"
+        "cmd": "xr_an --format=json"
     },
 	"19": {
         "invocation": "Audit the npm project and produce a JSON file with licenses.",
-        "cmd": "an --licenses --format=json"
+        "cmd": "xr_an --licenses --format=json"
     },
 	"20": {
-        "invocation": "Audit npm using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "an --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit npm using the \"wt1\" watch and Server ID \"765\".",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
     },
 	"21": {
         "invocation": "Audit the maven project at the current directory using the \"watch1\" watch.",
-        "cmd": "am --watches \"watch1\""
+        "cmd": "xr_am --watches \"watch1\""
     },
 	"22": {
         "invocation": "Audit the Maven project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "am --watches \"wt1,wt2\""
+        "cmd": "xr_am --watches \"wt1,wt2\""
     },
 	"23": {
         "invocation": "Audit the maven project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "am --project \"project-1\""
+        "cmd": "xr_am --project \"project-1\""
     },
 	"24": {
         "invocation": "Audit the Maven project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "am --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "xr_am --repo-path \"libs-local/release-artifacts/\""
     },
 	"25": {
         "invocation": "Audit the maven project.",
-        "cmd": "am"
+        "cmd": "xr_am"
     },
 	"26": {
         "invocation": "Audit the Maven project and show the list of licenses.",
-        "cmd": "am --licenses"
+        "cmd": "xr_am --licenses"
     },
 	"27": {
         "invocation": "Audit maven using \"4321\" Server ID.",
-        "cmd": "am --server-id \"4321\""
+        "cmd": "xr_am --server-id \"4321\""
     },
 	"28": {
         "invocation": "Audit the Maven project and produce a JSON file.",
-        "cmd": "am --format=json"
+        "cmd": "xr_am --format=json"
     },
 	"29": {
         "invocation": "Audit the maven project and produce a JSON file with licenses.",
-        "cmd": "am --licenses --format=json"
+        "cmd": "xr_am --licenses --format=json"
     },
 	"30": {
-        "invocation": "Audit Maven using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "am --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit Maven using the \"wt1\" watch and Server ID \"765\".",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
     },
 	"31": {
         "invocation": "Audit the pip project at the current directory using the \"watch1\" watch.",
-        "cmd": "ap --watches \"watch1\""
+        "cmd": "xr_ap --watches \"watch1\""
     },
 	"32": {
         "invocation": "Audit the Pip project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "ap --watches \"wt1,wt2\""
+        "cmd": "xr_ap --watches \"wt1,wt2\""
     },
 	"33": {
         "invocation": "Audit the pip project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "ap --project \"project-1\""
+        "cmd": "xr_ap --project \"project-1\""
     },
 	"34": {
         "invocation": "Audit the pip project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "ap --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "xr_ap --repo-path \"libs-local/release-artifacts/\""
     },
 	"35": {
         "invocation": "Audit the Pip project.",
-        "cmd": "ap"
+        "cmd": "xr_ap"
     },
 	"36": {
         "invocation": "Audit the pip project and show the list of licenses.",
-        "cmd": "ap --licenses"
+        "cmd": "xr_ap --licenses"
     },
 	"37": {
         "invocation": "Audit Pip using \"4321\" Server ID.",
-        "cmd": "ap --server-id \"4321\""
+        "cmd": "xr_ap --server-id \"4321\""
     },
 	"38": {
         "invocation": "Audit the pip project and produce a JSON file.",
-        "cmd": "ap --format=json"
+        "cmd": "xr_ap --format=json"
     },
 	"39": {
         "invocation": "Audit the Pip project and produce a JSON file with licenses.",
-        "cmd": "ap --licenses --format=json"
+        "cmd": "xr_ap --licenses --format=json"
     },
 	"40": {
-        "invocation": "Audit pip using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "ap --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit pip using the \"wt1\" watch and Server ID \"765\".",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
     },
 	"41": {
         "invocation": "Audit the go project at the current directory using the \"watch1\" watch.",
-        "cmd": "ago --watches \"watch1\""
+        "cmd": "xr_ago --watches \"watch1\""
     },
 	"42": {
         "invocation": "Audit the golang project at this directory using the \"wt1\" and \"wt2\" watches.",
-        "cmd": "ago --watches \"wt1,wt2\""
+        "cmd": "xr_ago --watches \"wt1,wt2\""
     },
 	"43": {
         "invocation": "Audit the go project at the current directory using the policies defined for project \"project-1\".",
-        "cmd": "ago --project \"project-1\""
+        "cmd": "xr_ago --project \"project-1\""
     },
 	"44": {
         "invocation": "Audit the golang project using the policies defined for the \"libs-local/release-artifacts/\" path in Artifactory.",
-        "cmd": "ago --repo-path \"libs-local/release-artifacts/\""
+        "cmd": "xr_ago --repo-path \"libs-local/release-artifacts/\""
     },
 	"45": {
         "invocation": "Audit the Go project.",
-        "cmd": "ago"
+        "cmd": "xr_ago"
     },
 	"46": {
         "invocation": "Audit the Go project and show the list of licenses.",
-        "cmd": "ago --licenses"
+        "cmd": "xr_ago --licenses"
     },
 	"47": {
         "invocation": "Audit Golang using \"4321\" Server ID.",
-        "cmd": "ago --server-id \"4321\""
+        "cmd": "xr_ago --server-id \"4321\""
     },
 	"48": {
         "invocation": "Audit the Golang project and produce a JSON file.",
-        "cmd": "ago --format=json"
+        "cmd": "xr_ago --format=json"
     },
 	"49": {
         "invocation": "Audit the Golang project and produce a JSON file with licenses.",
-        "cmd": "ago --licenses --format=json"
+        "cmd": "xr_ago --licenses --format=json"
     },
 	"50": {
-        "invocation": "Audit Go using the \"wt1\" watche and Server ID \"765\".",
-        "cmd": "ago --watches \"wt1\" --server-id \"765\""
+        "invocation": "Audit Go using the \"wt1\" watch and Server ID \"765\".",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+    },
+
+	"51": {
+        "invocation": "Scan all the files in \"path/to/files/\" file-system directory using the \"watch1\" watch defined in Xray.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"52": {
+        "invocation": "The \"watch1\" watch defined in Xray is used to scan all files at \"path/to/files/\" directory.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"53": {
+        "invocation": "Files located at the \"path/to/files/\" directory should be scanned with \"watch1\" watch.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"54": {
+        "invocation": "Use \"watch1\" watch to scan all the files located in the \"path/to/files/\" directory.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"55": {
+        "invocation": "Scan each file in the \"path/to/files/\" directory using \"watch1\" watch in Xray.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"56": {
+        "invocation": "Scan all files from the \"path/to/files/\" directory using the \"watch1\" watch.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"57": {
+        "invocation": "Command that scans all of the files in the \"path/to/files/\" directory with watch named \"watch1\".",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"58": {
+        "invocation": "Scan the files located in \"path/to/files/\" with \"watch1\" watch.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"59": {
+        "invocation": "This scan will cover all the files found under \"path/to/files/\" directory applying \"watch1\" watch.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"60": {
+        "invocation": "Give me a command that scans all of the files in the \"path/to/files/\" directory with \"watch1\" watch.",
+        "cmd": "xr_s \"path/to/files/\" --watches \"watch1\""
+    },
+	"61": {
+        "invocation": "Use the \"w45\" and \"w67\" watches to scan all the .zip files under \"path/to/files/\".",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"62": {
+        "invocation": "Under \"path/to/files/\" scan all .zip files using \"w45\" and \"w67\" watches.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"63": {
+        "invocation": "Scan all of the .zip files under \"path/to/files/\" using the \"w45\" and \"w67\" watches.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"64": {
+        "invocation": "Using the \"w45\" and \"w67\" watches, scan all .zip files that could be found in \"path/to/files/\".",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"65": {
+        "invocation": "Utilize the \"w45\" and \"w67\" watches to scan all the .zip files in \"path/to/files/\".",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"66": {
+        "invocation": "Use the \"w45\" and \"w67\" watches to scan all the .zip files under the \"path/to/files/\" folder.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"67": {
+        "invocation": "All the .zip files under \"path/to/files/\" are scanned with \"w45\" and \"w67\" watches.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"68": {
+        "invocation": "How to scan all .zip files in \"path/to/files/\" dir while applying \"w45\" and \"w67\" watches.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"69": {
+        "invocation": "Generate a scanning command for all the .zip files in \"path/to/files/\" with both \"w45\" and \"w67\" watches.",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"70": {
+        "invocation": "How can I scan all the .zip files in \"path/to/files/\" using the watches: \"w45\", \"w67\".",
+        "cmd": "xr_s \"path/to/files/*.zip\" --watches \"w45,w67\""
+    },
+	"71": {
+        "invocation": "Use the policies defined in Artifactory for the \"libs-local/release-artifacts/\" path to scan all the .tgz files located in the current directory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"72": {
+        "invocation": "Scan every .tgz file in the current directory using the policies defined for the path \"libs-local/release-artifacts/\" in Artifactory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"73": {
+        "invocation": "In Xray, scan all of the .tgz files contained in the current directory according to the policies defined for the \"libs-local/release-artifacts/\" path.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"74": {
+        "invocation": "Scan all .tgz files under this dir using policies from \"libs-local/release-artifacts/\".",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"75": {
+        "invocation": "Xray scan all the .tgz files in the current directory using the policies defined for the \"libs-local/release-artifacts/\" path.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"76": {
+        "invocation": "Scan all .tgz files in the current directory using policies specified for the \"libs-local/release-artifacts/\" path in Artifactory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"77": {
+        "invocation": "Check all .tgz files in current directory by referencing the policies set up for the \"libs-local/release-artifacts/\" path in Artifactory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"78": {
+        "invocation": "Use the policies defined in Artifactory for the \"libs-local/release-artifacts/\" path to scan .tgz files located inside the current directory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"79": {
+        "invocation": "Apply the policies from \"libs-local/release-artifacts/\" to scan all the .tgz files located in the current directory.",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"80": {
+        "invocation": "How too scan all the .tgz files in the current directory using the policies from \"libs-local/release-artifacts/\".",
+        "cmd": "xr_s \"*.tgz\" --repo-path \"libs-local/release-artifacts/\""
+    },
+	"81": {
+        "invocation": "Scanning of all the files under \"/dir/to/scan/\" to produce a JSON report.",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"82": {
+        "invocation": "A JSON report is generated after scanning all files in \"/dir/to/scan/\" folder.",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"83": {
+        "invocation": "Produce a JSON scan report of all files under \"/dir/to/scan/\".",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"84": {
+        "invocation": "Using \"/dir/to/scan/\" as a directory, scan each file and create a report in a JSON format.",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"85": {
+        "invocation": "All files under \"/dir/to/scan/\" are scanned, JSON file is produced.",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"86": {
+        "invocation": "Scan all the files beneath \"/dir/to/scan/\" and create a JSON file.",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"87": {
+        "invocation": "Generate a JSON report after scanning the files in \"/dir/to/scan/\".",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"88": {
+        "invocation": "The JSON report is created by scanning all files under \"/dir/to/scan/\".",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"89": {
+        "invocation": "Create a JSON report based on the scan of all the files under \"/dir/to/scan/\".",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"90": {
+        "invocation": "Using the \"/dir/to/scan/\" path, scan all files and generate a JSON report of the results.",
+        "cmd": "xr_s \"/dir/to/scan/\" --format=json"
+    },
+	"91": {
+        "invocation": "Check that this NPM project comply with both \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"92": {
+        "invocation": "Check that this Maven project comply with both \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"93": {
+        "invocation": "Check that this pip project comply with both \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"94": {
+        "invocation": "Check that this Go project comply with both \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"95": {
+        "invocation": "Audit this npm project with \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"96": {
+        "invocation": "Audit this maven project with \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"97": {
+        "invocation": "Audit this pip project with \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"98": {
+        "invocation": "Audit this Golang project with \"wt1\" and \"wt2\" watches.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"99": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches to examine the npm project in this directory.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"100": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches to examine the Maven project in this directory.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"101": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches to examine the Pip project in this directory.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"102": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches to examine the Go project in this directory.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"103": {
+        "invocation": "Apply \"wt1\" and \"wt2\" watches when auditing the npm project in current working directory.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"104": {
+        "invocation": "Apply \"wt1\" and \"wt2\" watches when auditing the Maven project in current working directory.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"105": {
+        "invocation": "Apply \"wt1\" and \"wt2\" watches when auditing the pip project in current working directory.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"106": {
+        "invocation": "Apply \"wt1\" and \"wt2\" watches when auditing the Go project in current working directory.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"107": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches for auditing the npm project in this directory.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"108": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches for auditing the Maven project in this directory.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"109": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches for auditing the Pip project in this directory.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"110": {
+        "invocation": "Use the \"wt1\" and \"wt2\" watches for auditing the Go project in this directory.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"111": {
+        "invocation": "Using \"wt1\" and \"wt2\" watches, audit this NPM project.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"112": {
+        "invocation": "Using \"wt1\" and \"wt2\" watches, audit this maven project.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"113": {
+        "invocation": "Using \"wt1\" and \"wt2\" watches, audit this pip project.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"114": {
+        "invocation": "Using \"wt1\" and \"wt2\" watches, audit this golang project.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"115": {
+        "invocation": "Both \"wt1\" and \"wt2\" watches are used to audit this NPM project.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"116": {
+        "invocation": "Both \"wt1\" and \"wt2\" watches are used to audit this MAVEN project.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"117": {
+        "invocation": "Both \"wt1\" and \"wt2\" watches are used to audit this PIP project.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"118": {
+        "invocation": "Both \"wt1\" and \"wt2\" watches are used to audit this GOLANG project.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"119": {
+        "invocation": "The \"wt1\" and \"wt2\" watches should be used to audit the NPM project in this directory.",
+        "cmd": "xr_an --watches \"wt1,wt2\""
+    },
+	"120": {
+        "invocation": "The \"wt1\" and \"wt2\" watches should be used to audit the Maven project in this directory.",
+        "cmd": "xr_am --watches \"wt1,wt2\""
+    },
+	"121": {
+        "invocation": "The \"wt1\" and \"wt2\" watches should be used to audit the Pip project in this directory.",
+        "cmd": "xr_ap --watches \"wt1,wt2\""
+    },
+	"122": {
+        "invocation": "The \"wt1\" and \"wt2\" watches should be used to audit the Go project in this directory.",
+        "cmd": "xr_ago --watches \"wt1,wt2\""
+    },
+	"123": {
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit NPM.",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+    },
+	"124": {
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit Maven.",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+    },
+	"125": {
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit Pip.",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+    },
+	"126": {
+        "invocation": "Utilize the \"wt1\" watch and the Server ID \"765\" to audit Go.",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+    },
+	"127": {
+        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit NPM project.",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+    },
+	"128": {
+        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit maven project.",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+    },
+	"129": {
+        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit pip project.",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+    },
+	"130": {
+        "invocation": "Using \"wt1\" watch and the Server ID \"765\", audit Go project.",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+    },
+	"131": {
+        "invocation": "Review npm with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+    },
+	"132": {
+        "invocation": "Review maven with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+    },
+	"133": {
+        "invocation": "Review pip with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+    },
+	"134": {
+        "invocation": "Review golang with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+    },
+	"135": {
+        "invocation": "Analyze npm with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_an --watches \"wt1\" --server-id \"765\""
+    },
+	"136": {
+        "invocation": "Analyze maven with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_am --watches \"wt1\" --server-id \"765\""
+    },
+	"137": {
+        "invocation": "Analyze pip with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_ap --watches \"wt1\" --server-id \"765\""
+    },
+	"138": {
+        "invocation": "Analyze golang with \"wt1\" watch and the Server ID \"765\".",
+        "cmd": "xr_ago --watches \"wt1\" --server-id \"765\""
+    },
+	"139": {
+        "invocation": "Use Xray to audit this npm project according to the policies defined for the \"libs-local/release-artifacts/\" path.",
+        "cmd": "xr_an --repo-path \"libs-local/release-artifacts/\""
+    },
+	"140": {
+        "invocation": "Use Xray to audit this maven project according to the policies defined for the \"libs-local/release-artifacts/\" path.",
+        "cmd": "xr_am --repo-path \"libs-local/release-artifacts/\""
+    },
+	"141": {
+        "invocation": "Use Xray to audit this pip project according to the policies defined for the \"libs-local/release-artifacts/\" path.",
+        "cmd": "xr_ap --repo-path \"libs-local/release-artifacts/\""
+    },
+	"142": {
+        "invocation": "Use Xray to audit this Go project according to the policies defined for the \"libs-local/release-artifacts/\" path.",
+        "cmd": "xr_ago --repo-path \"libs-local/release-artifacts/\""
+    },
+	"143": {
+        "invocation": "Check the npm project using the policies from \"libs-local/release-artifacts/\" Artifactory path.",
+        "cmd": "xr_an --repo-path \"libs-local/release-artifacts/\""
+    },
+	"144": {
+        "invocation": "Check the maven project using the policies from \"libs-local/release-artifacts/\" Artifactory path.",
+        "cmd": "xr_am --repo-path \"libs-local/release-artifacts/\""
+    },
+	"145": {
+        "invocation": "Check the python project using the policies from \"libs-local/release-artifacts/\" Artifactory path.",
+        "cmd": "xr_ap --repo-path \"libs-local/release-artifacts/\""
+    },
+	"146": {
+        "invocation": "Check the Go project using the policies from \"libs-local/release-artifacts/\" Artifactory path.",
+        "cmd": "xr_ago --repo-path \"libs-local/release-artifacts/\""
+    },
+	"147": {
+        "invocation": "Scan every .tgz file here and show all known vulnerabilities, regardless of the policies defined in Xray.",
+        "cmd": "xr_s \"*.tgz\""
+    },
+	"148": {
+        "invocation": "Regardless of the policies in Xray, scan any .tgz file in this directory.",
+        "cmd": "xr_s \"*.tgz\""
+    },
+	"149": {
+        "invocation": "Scan any .tgz file in this directory for vulnerabilities.",
+        "cmd": "xr_s \"*.tgz\""
+    },
+	"150": {
+        "invocation": "Go over all the .tgz files and scan them for vulnerabilities.",
+        "cmd": "xr_s \"*.tgz\""
     }
 }
