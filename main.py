@@ -176,10 +176,7 @@ def single(sentence, model_dir, model_file):
     new_cmd = replace_placeholders(commands, placeholders)
     if len(new_cmd) > 0:
         utility_parts = new_cmd[0].split('_')
-        if utility_parts[0] == 'xr':
-            new_cmd = [utility_parts[1]] + new_cmd[1:]
-        else:
-            new_cmd = utility_parts + new_cmd[1:]
+        new_cmd = utility_parts + new_cmd[1:]
 
     new_cmd = ['jfrog'] + new_cmd
     print(f"Result={' '.join(new_cmd)}")
