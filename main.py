@@ -173,6 +173,22 @@ def single(sentence, model_dir, model_file):
                                 model_file,
                                 result_cnt=1)
 
+    new_cmd = replace_placeholders(commands, placeholders)
+    if len(new_cmd) > 0:
+        utility_parts = new_cmd[0].split('_')
+        if utility_parts[0] == 'xr':
+            new_cmd = [utility_parts[1]] + new_cmd[1:]
+        else:
+            new_cmd = utility_parts + new_cmd[1:]
+
+    new_cmd = ['jfrog'] + new_cmd
+    print(f"Result={' '.join(new_cmd)}")
+    print(f"Result_pre_process={commands[0][0]}")
+    print(f"NewInvocation={','.join(new_invocations[0])}")
+    print(f"Placeholders={','.join([','.join([str(v[0]),v[1][0],v[1][1]]) for v in placeholders[0][0].items()])}")
+
+
+def replace_placeholders(commands, placeholders):
     parts = commands[0][0].split(' ')
     new_cmd = []
     used_fillers = set()
@@ -185,11 +201,7 @@ def single(sentence, model_dir, model_file):
                     p_tran = v[0]
                     break
         new_cmd.append(p_tran)
-
-    print(f"Result={' '.join(new_cmd)}")
-    print(f"Result_pre_process={commands[0][0]}")
-    print(f"NewInvocation={','.join(new_invocations[0])}")
-    print(f"Placeholders={','.join([','.join([str(v[0]),v[1][0],v[1][1]]) for v in placeholders[0][0].items()])}")
+    return new_cmd
 
 
 if __name__ == '__main__':
